@@ -10,7 +10,9 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <TextBox x:Name="TextBoxH" Width="50" Text="0" PreviewTextInput="TextBoxH_PreviewTextInput" TextChanged="TextBoxH_TextChanged"/>
+            <TextBox x:Name="TextBoxH" Width="50" Text="0" />
+            <TextBox x:Name="TextBoxM" Width="50" Text="0" />
+            <TextBox x:Name="TextBoxS" Width="50" Text="0" />
         </StackPanel>
         <StackPanel 
             Grid.Row="1"
@@ -36,13 +38,41 @@
                 </ListView.ItemsPanel>
 
             </ListView>
+            <ListView 
+                x:Name="RingM"
+                IsHitTestVisible="False">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+
+            </ListView>
+            <ListView 
+                x:Name="RingS"
+                IsHitTestVisible="False">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+
+            </ListView>
             
             <TextBox 
-                x:Name="InputBox" 
-                Width="300" 
-                HorizontalAlignment="Left"/>
+                x:Name="InputBox"
+                CharacterCasing="Upper"
+                Width="300"
+                HorizontalAlignment="Left"
+                TextChanged="InputBox_TextChanged"
+                FontFamily="Courier New"/>
             
-            <TextBlock x:Name="Lampboard"/>
+            <TextBlock 
+                x:Name="EncryptedBlock"
+                FontFamily="Courier New"/>
+            <TextBlock 
+                x:Name="MirrorEncryptedBlock"
+                FontFamily="Courier New"/>
         </StackPanel>
     </Grid>
 </Window>
