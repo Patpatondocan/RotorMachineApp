@@ -1,0 +1,48 @@
+﻿<Window x:Class="RotorMachineApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        Title="Rotor Machine" Height="350" Width="500">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="TextBoxH" Width="50" Text="0" PreviewTextInput="TextBoxH_PreviewTextInput" TextChanged="TextBoxH_TextChanged"/>
+        </StackPanel>
+        <StackPanel 
+            Grid.Row="1"
+            HorizontalAlignment="Left">
+            <ListView 
+                x:Name="Control" 
+                IsHitTestVisible="False"
+                BorderThickness="0">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+
+            <ListView 
+                x:Name="RingH"
+                IsHitTestVisible="False">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+
+            </ListView>
+            
+            <TextBox 
+                x:Name="InputBox" 
+                Width="300" 
+                HorizontalAlignment="Left"/>
+            
+            <TextBlock x:Name="Lampboard"/>
+        </StackPanel>
+    </Grid>
+</Window>
